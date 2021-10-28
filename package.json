@@ -1,0 +1,24 @@
+{
+  "name": "gh-repo-rename",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ULL-MII-SYTWS-2122/gh-repo-rename.git"
+  },
+  "author": "Carlos Díaz Calzadilla",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ULL-MII-SYTWS-2122/gh-repo-rename/issues"
+  },
+  "homepage": "https://github.com/ULL-MII-SYTWS-2122/gh-repo-rename#readme",
+  "dependencies": {
+    "commander": "^8.3.0",
+    "fs": "^0.0.1-security",
+    "shelljs": "^0.8.4"
+  }
+}
