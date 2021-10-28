@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/ULL-MII-SYTWS-2122/gh-repo-rename#readme",
   "dependencies": {
+    "@octokit/core": "^3.5.1",
     "commander": "^8.3.0",
     "fs": "^0.0.1-security",
     "shelljs": "^0.8.4"
