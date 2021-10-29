@@ -1,9 +1,9 @@
 const shell = require('shelljs');
 const { Command } = require('commander');
-
+const path= require('path');
 const defaultName = 'default-repository';
 const program = new Command();
-program.version(require('../package.json').version);
+program.version(require(path.join(__dirname,'package.json')).version);
 
 program
     .name("gh repo-rename [options] [organization/repository] [newRepositoriName]")
