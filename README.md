@@ -15,4 +15,20 @@ Options:
 * Ther isn't any option that is required
 
 # Examples
-An excecution example
+An excecution example of default name:
+```bash
+    Repository name: ULL-MII-SYTWS-2122/prueba4
+
+    gitpod /workspace/gh-repo-rename $ gh repo-rename -d  ULL-MII-SYTWS-2122/prueba4
+
+    Repository name: ULL-MII-SYTWS-2122/default-repository
+```
+
+An excecution example of prueba4 name:
+```bash
+    Repository name: ULL-MII-SYTWS-2122/default-repository
+
+    gitpod /workspace/gh-repo-rename $ gh repo-rename  ULL-MII-SYTWS-2122/default-repository prueba4
+
+    Repository name: ULL-MII-SYTWS-2122/prueba4
+```

@@ -54,7 +54,9 @@ if(!program.args[1] && !program.opts().default) {
 
 if(program.opts().default) {
     gh(`api -X PATCH /repos/${program.args[0]} -f name=${defaultName}`);
+    console.log(`Name of the repository changed to ${defaultName} succesfuly`);
 }
 else {
     gh(`api -X PATCH /repos/${program.args[0]} -f name=${program.args[1]}`);
+    console.log(`Name of the repository changed to ${program.args[1]} succesfuly`);
 }
