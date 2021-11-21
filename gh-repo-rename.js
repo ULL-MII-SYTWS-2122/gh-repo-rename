@@ -31,32 +31,36 @@ const gh = (...args) => exec("gh", ...args);
 
 function showError(error) {
     if (error) {
-      console.error(`Error!: ${error}`);
-      process.exit(1); 
+      throw(`Error!: ${error}`);
     }
   }
 
-if (!shell.which('git')) {
-    showError('Sorry, this extension requires git installed!');
+try {
+    if (!shell.which('git')) {
+        showError('Sorry, this extension requires git installed!');
+    }
+    
+    if (!shell.which('gh')) {
+        showError('Sorry, this extension requires GitHub Cli (gh) installed!');
+    }
+    
+    if(!program.opts() && !program.args[0]) {
+        showError('Sorry, you need to write an organization/repository');
+    }
+    
+    if(!program.args[1] && !program.opts().default) {
+        showError('Sorry, you need to write an name for the repository, or you can put the -d option');
+    }
+    
+    if(program.opts().default) {
+        gh(`api -X PATCH /repos/${program.args[0]} -f name=${defaultName}`);
+        console.log(`Name of the repository changed to ${defaultName} succesfuly`);
+    }
+    else {
+        gh(`api -X PATCH /repos/${program.args[0]} -f name=${program.args[1]}`);
+        console.log(`Name of the repository changed to ${program.args[1]} succesfuly`);
+    }
 }
-
-if (!shell.which('gh')) {
-    showError('Sorry, this extension requires GitHub Cli (gh) installed!');
-}
-
-if(!program.opts() && !program.args[0]) {
-    showError('Sorry, you need to write an organization/repository');
-}
-
-if(!program.args[1] && !program.opts().default) {
-    showError('Sorry, you need to write an name for the repository, or you can put the -d option');
-}
-
-if(program.opts().default) {
-    gh(`api -X PATCH /repos/${program.args[0]} -f name=${defaultName}`);
-    console.log(`Name of the repository changed to ${defaultName} succesfuly`);
-}
-else {
-    gh(`api -X PATCH /repos/${program.args[0]} -f name=${program.args[1]}`);
-    console.log(`Name of the repository changed to ${program.args[1]} succesfuly`);
+catch(error) {
+    console.log(error);
 }

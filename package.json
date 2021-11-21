@@ -1,8 +1,8 @@
 {
-  "name": "gh-repo-rename",
-  "version": "1.0.0",
+  "name": "@alu0101102726/gh-repo-rename",
+  "version": "1.0.2",
   "description": "",
-  "main": "index.js",
+  "main": "gh-repo-rename.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
