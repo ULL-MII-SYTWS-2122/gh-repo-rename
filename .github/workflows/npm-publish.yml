@@ -4,8 +4,10 @@
 name: Npm publish
 
 on:
-  release:
-    types: [publish]
+  push:
+        branches: [master]
+  pull_request:
+        branches: [master]
 
 jobs:
   build:
