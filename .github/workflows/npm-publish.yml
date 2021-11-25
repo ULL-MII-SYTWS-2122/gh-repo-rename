@@ -46,7 +46,8 @@ jobs:
           assignees: ${{github.actor}}
           body: Issue created ${{github.sha}}
           
-  transfer_issue:
+  transfer_issue:  
+    needs: create_issue
     name: transfer issue
     runs-on: ubuntu-latest
     steps:
