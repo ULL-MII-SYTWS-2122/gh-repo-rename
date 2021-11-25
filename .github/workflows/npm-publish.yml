@@ -36,11 +36,12 @@ jobs:
   create_issue:
     name: Create published package issue
     runs-on: ubuntu-latest
-    permissions:
-      contents: read
-      issues: write
     steps:
       - uses: actions/checkout@v2
-      - uses: JasonEtco/create-an-issue@v2
-        env:
-          GITHUB_TOKEN: ${{ secrets.ACCESS_TOKEN }}
+      - uses: nashmaniac/create-issue-action@v1.1
+        name: Create issue npm package published
+        with:
+          title: Package published
+          token: ${{secrets.ACCESS_TOKEN}}
+          assignees: ${{github.actor}}
+          body: Workflow failed for commit ${{github.sha}}
