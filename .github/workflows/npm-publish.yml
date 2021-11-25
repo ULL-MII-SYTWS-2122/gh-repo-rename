@@ -32,3 +32,7 @@ jobs:
       - run: npm publish
         env:
           NODE_AUTH_TOKEN: ${{secrets.NPM_AUTH_TOKEN}}
+          
+  call-workflow-testing:
+    uses: ULL-MII-SYTWS-2122/gh-repo-rename-testing/blob/main/.github/workflows/testing.yml@v1
+    
