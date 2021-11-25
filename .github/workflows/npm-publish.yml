@@ -34,5 +34,5 @@ jobs:
           NODE_AUTH_TOKEN: ${{secrets.NPM_AUTH_TOKEN}}
           
   call-workflow-testing:
-    uses: ULL-MII-SYTWS-2122/gh-repo-rename-testing/.github/workflows/testing.yml@v1
+    uses: ULL-MII-SYTWS-2122/gh-repo-rename-testing/.github/workflows/testing.yml@main
     
