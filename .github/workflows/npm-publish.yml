@@ -33,29 +33,13 @@ jobs:
         env:
           NODE_AUTH_TOKEN: ${{secrets.NPM_AUTH_TOKEN}}
           
-  create_issue:
-    name: Create published package issue
+  update_issue:
+    name: Updated testing issue
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-      - uses: nashmaniac/create-issue-action@v1.1
-        name: Create issue npm package published
+      - uses: actions/checkout@master
+      - name: Update issue
+        uses: ribtoks/parent-issue-update@master
         with:
-          title: Package published
-          token: ${{secrets.ACCESS_TOKEN}}
-          assignees: ${{github.actor}}
-          body: Issue created ${{github.sha}}
-          
-  transfer_issue:  
-    needs: create_issue
-    name: transfer issue
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v2
-      - uses: smockle/action-transfer-issues@dist
-        with:
-          source: ULL-MII-SYTWS-2122/gh-repo-rename
-          destination: ULL-MII-SYTWS-2122/gh-repo-rename-testing
-          issue_numbers: "1"
-        env:
-          GH_TOKEN: ${{ secrets.ACCESS_TOKEN }}
+         TOKEN: ${{ secrets.ACCESS_TOKEN }}
+         REPO: ULL-MII-SYTWS-2122/gh-repo-rename-testing
