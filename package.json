@@ -1,6 +1,6 @@
 {
   "name": "@alu0101102726/gh-repo-rename",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "",
   "main": "gh-repo-rename.js",
   "scripts": {
@@ -9,6 +9,9 @@
   "repository": {
     "type": "git",
     "url": "git+https://github.com/ULL-MII-SYTWS-2122/gh-repo-rename.git"
+  },
+  "bin": {
+    "repo-rename": "gh-repo-rename.js"
   },
   "author": "Carlos Díaz Calzadilla",
   "license": "ISC",
